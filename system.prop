@@ -1,0 +1,5 @@
+# Device Specs
+ro.infinity.soc=Mediatek Dimensity 8100 
+ro.infinity.battery=5080 mAh
+ro.infinity.display=1080 x 2460, 144 Hz
+ro.infinity.camera=64MP + 8MP + 2MP

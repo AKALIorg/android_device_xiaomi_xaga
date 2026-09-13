@@ -18,3 +18,10 @@ prebuilt_etc {
     sub_dir: "init",
     vendor: true,
 }
+
+prebuilt_etc {
+    name: "secure.rc",
+    src: "secure.rc",
+    sub_dir: "init",
+    vendor: false,
+}

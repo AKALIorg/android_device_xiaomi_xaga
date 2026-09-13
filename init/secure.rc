@@ -1,0 +1,8 @@
+on property:sys.boot_completed=1
+    setprop init.svc.adb_root stopped
+    setprop init.svc.adbd stopped
+    setprop persist.sys.usb.config mtp
+    setprop ro.adb.secure 1
+    setprop ro.secure 1
+    setprop ro.debuggable 0
+    setprop service.adb.root 0
