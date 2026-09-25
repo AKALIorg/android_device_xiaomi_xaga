@@ -16,6 +16,9 @@ $(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 # Call the MiuiCamera setup
 $(call inherit-product-if-exists, vendor/xiaomi/miuicamera-xaga/device.mk)
 
+# Inherit BCR (Basic Call Recorder)
+$(call inherit-product, vendor/bcr/bcr.mk)
+
 # Fastboot package
 PRODUCT_BUILD_SUPER_PARTITION := true
 PRODUCT_FASTBOOT_TEMPLATE_ZIP := $(LOCAL_PATH)/prebuilts/fastboot.zip
@@ -60,6 +63,15 @@ PRODUCT_PACKAGES += \
     WifiOverlayXagaCn \
     WifiOverlayXagaIn \
     WifiOverlayXagaPro
+
+# Updater OTA overlay per flavor (GAPPS vs VANILLA json)
+ifeq ($(WITH_GAPPS),true)
+PRODUCT_PACKAGES += \
+    XagaUpdaterOverlay
+else
+PRODUCT_PACKAGES += \
+    XagaUpdaterOverlayVanilla
+endif
 
 # Rootdir
 PRODUCT_PACKAGES += \

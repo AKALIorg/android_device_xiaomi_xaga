@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Unofficial xaga OTA VANILLA: GitHub JSON + SourceForge zip -->
+    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/AKALIorg/OTA/17/vanilla/xaga.json</string>
+</resources>
