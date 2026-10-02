@@ -37,3 +37,13 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint=POCO/xaga_global/xaga:14/UP1A.231005.007/OS2.0.3.0.ULOMIXM:user/release-keys \
     DeviceProduct=$(PRODUCT_SYSTEM_NAME)
+
+# Full Chromium stack instead of empty *-Stub packages (see gms/Android.bp).
+# Stubs need Play Store hydration; offline they render nothing.
+ifeq ($(WITH_GAPPS),true)
+PRODUCT_PACKAGES := $(filter-out Chrome-Stub TrichromeLibrary-Stub WebViewGoogle-Stub,$(PRODUCT_PACKAGES))
+PRODUCT_PACKAGES += \
+    Chrome \
+    TrichromeLibrary \
+    WebViewGoogle
+endif
